@@ -17,6 +17,7 @@ assigned_port = socket.addr[1]
 
 user = "#{local_ip}:#{assigned_port}"
 
+socket.send('ping',0,HOSTNAME,PORT)
 puts "connected to server @ #{HOSTNAME}:#{PORT} as #{user}"
 puts "start texting..."
 

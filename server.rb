@@ -1,8 +1,13 @@
 require 'socket'
 
 BUFFER_SIZE = 1024
-HOSTNAME = '192.168.29.251'
 PORT = 4321
+
+def local_ip
+  Socket.ip_address_list.detect(&:ipv4_private?).ip_address
+end
+
+HOSTNAME = local_ip
 
 socket = UDPSocket.new
 socket.bind(HOSTNAME,PORT)

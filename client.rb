@@ -25,7 +25,7 @@ Thread.new do
     message, _ = socket.recvfrom(BUFFER_SIZE)
     author, _ = message.strip.split(' > ', 2)
     if author != user
-      puts "\n#{message.strip}"
+      puts "#{message.strip}"
     end
   end
 end

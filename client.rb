@@ -6,7 +6,6 @@ print 'server ip > '
 HOSTNAME = gets.chomp
 PORT = 4321
 
-
 def local_ip
   Socket.ip_address_list.detect(&:ipv4_private?).ip_address
 end
@@ -19,6 +18,7 @@ assigned_port = socket.addr[1]
 user = "#{local_ip}:#{assigned_port}"
 
 puts "connected to server @ #{HOSTNAME}:#{PORT} as #{user}"
+puts "start texting..."
 
 Thread.new do
   loop do
@@ -31,7 +31,6 @@ Thread.new do
 end
 
 loop do
-  print 'you > '
   message = gets.chomp
   socket.send(message,0,HOSTNAME,PORT)
 end

@@ -1,4 +1,6 @@
-# UDP Chat Application
+# UDP Chat App
+
+![Cover](./assets/cover.png)
 
 This is a simple chat application built using Ruby and the UDP protocol. It allows users to send and receive messages over a network.
 
